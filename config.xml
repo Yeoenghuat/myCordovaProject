@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.example.cordova.myApp" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>myApp</name>
+    <description>
+        A sample Apache Cordova application that responds to the deviceready event.
+    </description>
+    <author email="dev@cordova.apache.org" href="http://cordova.io">
+        Apache Cordova Team
+    </author>
+    <content src="plugin.html" />
+    <access origin="*" />
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+    <allow-intent href="tel:*" />
+    <allow-intent href="sms:*" />
+    <allow-intent href="mailto:*" />
+    <allow-intent href="geo:*" />
+    <platform name="android">
+        <allow-intent href="market:*" />
+        <icon density="mdpi" src="res/icon/android/mipmap-mdpi/android_icon.png" />
+        <icon density="hdpi" src="res/icon/android/mipmap-hdpi/android_icon.png" />
+        <icon density="xhdpi" src="res/icon/android/mipmap-xhdpi/android_icon.png" />
+        <icon density="xxhdpi" src="res/icon/android/mipmap-xxhdpi/android_icon.png" />
+        <icon density="xxxhdpi" src="res/icon/android/mipmap-xxxhdpi/android_icon.png" />
+        <splash density="land-hdpi" src="res/screen/android/drawable-land-hdpi/screen.png" />
+        <splash density="land-ldpi" src="res/screen/android/drawable-land-ldpi/screen.png" />
+        <splash density="land-mdpi" src="res/screen/android/drawable-land-mdpi/screen.png" />
+        <splash density="land-xhdpi" src="res/screen/android/drawable-land-xhdpi/screen.png" />
+        <splash density="port-hdpi" src="res/screen/android/drawable-hdpi/screen.png" />
+        <splash density="port-ldpi" src="res/screen/android/drawable-ldpi/screen.png" />
+        <splash density="port-mdpi" src="res/screen/android/drawable-mdpi/screen.png" />
+        <splash density="port-xhdpi" src="res/screen/android/drawable-xhdpi/screen.png" />
+    </platform>
+    <platform name="ios">
+        <allow-intent href="itms:*" />
+        <allow-intent href="itms-apps:*" />
+    </platform>
+    <platform name="browser">
+        <preference name="SplashScreen" value="/img/screen.png" />
+        <preference name="AutoHideSplashScreen" value="true" />
+        <preference name="SplashScreenDelay" value="1500" />
+        <preference name="SplashScreenBackgroundColor" value="black" />
+        <preference name="ShowSplashScreen" value="false" />
+        <preference name="SplashScreenWidth" value="300" />
+        <preference name="SplashScreenHeight" value="600" />
+    </platform>
+    <preference name="SplashScreenDelay" value="1500" />
+    <plugin name="cordova-plugin-whitelist" spec="^1.3.3" />
+    <plugin name="cordova-plugin-browsersync" spec="^1.1.0" />
+    <plugin name="cordova-plugin-camera" spec="^4.0.3" />
+    <plugin name="cordova-plugin-device" spec="^2.0.2" />
+    <plugin name="cordova-plugin-battery-status" spec="^2.0.2" />
+    <plugin name="cordova-plugin-dialogs" spec="^2.0.1" />
+    <plugin name="cordova-plugin-file" spec="^6.0.1" />
+    <plugin name="cordova-plugin-geolocation" spec="^4.0.1" />
+    <plugin name="cordova-plugin-inappbrowser" spec="^3.0.0" />
+    <plugin name="cordova-plugin-screen-orientation" spec="^3.0.1" />
+    <plugin name="cordova-plugin-splashscreen" spec="^5.0.2" />
+    <plugin name="cordova-plugin-vibration" spec="^3.1.0" />
+    <plugin name="cordova-plugin-file-transfer" spec="^1.7.1" />
+    <plugin name="cordova-plugin-genius-scan" spec="@thegrizzlylabs/cordova-plugin-genius-scan@~0.0.1" />
+    <engine name="android" spec="^7.1.4" />
+    <engine name="browser" spec="^5.0.4" />
+</widget>

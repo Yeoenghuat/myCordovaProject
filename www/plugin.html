@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>title</title>
+</head>
+
+<body>
+    <div class="container-fluid plugin-div">
+        <div id="deviceready" class="blink">
+            <p class="event listening">Connecting to Device</p>
+            <p class="event received">Device is Ready</p>
+        </div>
+        <div class="row">
+            <div class="col-sm feature-div">
+                <button id="camera-plugin" type="button" class="btn btn-outline-primary btn-lg">Camera</button>
+            </div>
+            <div class="col-sm feature-div">
+                <button id="device-plugin" type="button" class="btn btn-outline-primary btn-lg">Device Info</button>
+            </div>
+            <div class="col-sm feature-div">
+                <button id="battery-plugin" type="button" class="btn btn-outline-primary btn-lg">Battery
+                    Status</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm feature-div">
+                <button id="dialog-plugin" type="button" class="btn btn-outline-primary btn-lg">Dialogs</button>
+            </div>
+            <div class="col-sm feature-div">
+                <button id="screen-plugin" type="button" class="btn btn-outline-primary btn-lg">Screen
+                    Orientation</button>
+            </div>
+            <div class="col-sm feature-div">
+                <button id="geolocation-plugin" type="button" class="btn btn-outline-primary btn-lg">Geolocation</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm feature-div">
+                <button id="inAppBrowser-plugin" type="button" class="btn btn-outline-primary btn-lg">In App
+                    Browser</button>
+            </div>
+            <div class="col-sm feature-div">
+                <button id="vibration-plugin" type="button" class="btn btn-outline-primary btn-lg">Vibration</button>
+            </div>
+            <div class="col-sm feature-div">
+                <button type="button" class="btn btn-outline-primary btn-lg" data-toggle="modal" data-target="#file-modal">File</button>
+
+                <!-- Modal -->
+                <div class="modal fade" id="file-modal" tabindex="-1" role="dialog" aria-labelledby="file-modal-title" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <button id="file-upload-plugin" type="button" class="btn btn-primary">Upload</button>
+                                <button id="file-download-plugin" type="button" class="btn btn-primary">Download</button>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm feature-div">
+                <h3>Genius Scan</h3>
+                <div class="control">
+                    <input type="checkbox" id="bw_filter" name="bw_filter">
+                    <label for="bw_filter">B&W filter</label>
+                </div>
+                <div class="control">
+                    <button id="scan_img_btn" class="btn btn-outline-primary btn-lg">Scan from image</button>
+                </div>
+                <div class="control">
+                    <button id="scan_camera_btn" class="btn btn-outline-primary btn-lg">Scan from camera</button>
+                </div>
+                <div class="control">
+                    <button id="scan_pdf_btn" disabled class="btn btn-outline-primary btn-lg">Generate PDF</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="browser-div" class="row">
+        <div class="col-12 px-1">
+            <h5>In App Browser Input</h5>
+        </div>
+        <div class="col-6 px-1">
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-default">URL</span>
+                </div>
+                <input id="url-tb" type="text" class="form-control" aria-label="Default" value="https://www.google.com.sg" aria-describedby="inputGroup-sizing-default">
+            </div>
+        </div>
+        <div class="col-6 px-1">
+            <div class="form-group mb-3">
+                <select class="form-control" id="target-ddl">
+                    <option value="_blank">In App Browser</option>
+                    <option value="_system">System Web Browser</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <div id="file-div" class="row">
+        <div class="col-12 px-1">
+            <h5>File Upload Input</h5>
+        </div>
+        <div class="col-12 px-1">
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-default">File Server URL</span>
+                </div>
+                <input id="file-upload-url" type="text" class="form-control" aria-label="Default" value="http://example.com/upload" aria-describedby="inputGroup-sizing-default">
+            </div>
+        </div>
+    </div>
+    <div id="camera-div">
+        <div class="col-12 px-1">
+            <h5>Camera</h5>
+        </div>
+        <img id="my-capture-img"></img>
+    </div>
+    <div id="genius-div">
+        <div class="col-12 px-1">
+            <h5>Genius Scan</h5>
+        </div>
+        <img id="img_preview" class="img-preview" />
+        <input id="file-uri" hidden readonly></input>
+        <input id="file-input" accept="image/jpeg" hidden type="file" name="myFile">
+    </div>
+    <link rel="stylesheet" href="../www/css/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="css/plugin.css">
+    <script type="text/javascript" src="../www/js/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="../www/js/popperjs/popper.min.js"></script>
+    <script type="text/javascript" src="../www/js/bootstrap/bootstrap.min.js"></script>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/plugin.js"></script>
+</body>
+
+</html>
