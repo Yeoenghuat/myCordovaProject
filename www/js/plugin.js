@@ -1,6 +1,6 @@
 document.addEventListener('deviceready', onDeviceReady, false);
 
-
+var debugMessage = document.getElementById('debugging-message');
 
 function onDeviceReady() {
     receivedEvent('deviceready');
@@ -241,7 +241,6 @@ function geniusScanCameraFeature() {
     );
 }
 
-
 var selectedFile;
 var selectedFileBlob;
 
@@ -253,7 +252,6 @@ function geniusScanImageFeature() {
 
 function handleFileSelect(event) {
     selectedFile = event.target.files[0];
-
     // Request for file system
     window.requestFileSystem(window.TEMPORARY, 5 * 1024 * 1024, onGSInitFs, onErrorLoadFs);
 }
@@ -266,14 +264,12 @@ function onGSInitFs(fs) {
     // Execute this when file reader load event is fired
     reader.onload = function(e) {
         selectedFileBlob = reader.result;
-
         // create an empty temp file, "scan.jpg"
         fs.root.getFile("scan.jpg", { create: true }, function(DatFile) {
             DatFile.createWriter(function(DatContent) {
                 // Write the content of the selected file into the temp file.
                 // The selected file is stored in memory, we need to write it into temp file to manipulate it.
                 DatContent.write(selectedFileBlob);
-
                 // Call GeniusScan to process the image
                 cordova.plugins.GeniusScan.scanImage(
                     cacheImgUri,
@@ -304,7 +300,9 @@ function onPDFSuccess(pdfUri) {
 }
 
 function onGSError(error) {
-    alert("Error: " + JSON.stringify(error));
+    //alert("Error: " + JSON.stringify(error));
+    debugMessage.value += '\n' + new Date().toLocaleString() + ' Error: ' + JSON.stringify(error)
+    debugMessage.scrollTop = debugMessage.scrollHeight;
 }
 
 function setPicture(fileUri) {
@@ -317,7 +315,3 @@ function setPicture(fileUri) {
     pdfButton.disabled = false;
 }
 /*End of Genius Scan Feature*/
-
-
-// https://www.jotform.com/blog/html5-filesystem-api-create-files-store-locally-using-javascript-webkit/
-// https://stackoverflow.com/questions/30864573/what-is-a-blob-url-and-why-it-is-used

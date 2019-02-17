@@ -59,7 +59,7 @@ cordova run browser -- --live-reload --target=chrome (if browsersync plugin is i
 
 ## Splash Screen & App Icon
 
-1.	Splash screen and App Icon are configured in the config.xml file. Multiple icon / screen images are required for different phone sizes. You can use this [link](https://pgicons.abiro.com/) to help you generate icons / screens for different resolution.
+Splash screen and App Icon are configured in the config.xml file. Multiple icon / screen images are required for different phone sizes. You can use this [link](https://pgicons.abiro.com/) to help you generate icons / screens for different resolution.
 
 ## Useful links
 
