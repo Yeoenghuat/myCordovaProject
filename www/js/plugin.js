@@ -301,7 +301,7 @@ function onPDFSuccess(pdfUri) {
 
 function onGSError(error) {
     //alert("Error: " + JSON.stringify(error));
-    debugMessage.value += '\n' + new Date().toLocaleString() + ' Error: ' + JSON.stringify(error)
+    debugMessage.value += '\n[' + new Date().toLocaleString() + '] Error: ' + JSON.stringify(error)
     debugMessage.scrollTop = debugMessage.scrollHeight;
 }
 

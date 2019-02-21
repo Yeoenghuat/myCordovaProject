@@ -1,0 +1,68 @@
+/*Device ready CSS*/
+
+.event {
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    color: #FFFFFF;
+    font-size: 12px;
+    margin: 10px auto 10px auto;
+    padding: 2px 0px;
+    width: 50%;
+}
+
+.event.listening {
+    background-color: #333333;
+    display: block;
+    text-align: center;
+}
+
+.event.received {
+    background-color: #4B946A;
+    display: none;
+    text-align: center;
+}
+
+@keyframes fade {
+    from {
+        opacity: 1.0;
+    }
+    50% {
+        opacity: 0.4;
+    }
+    to {
+        opacity: 1.0;
+    }
+}
+
+@-webkit-keyframes fade {
+    from {
+        opacity: 1.0;
+    }
+    50% {
+        opacity: 0.4;
+    }
+    to {
+        opacity: 1.0;
+    }
+}
+
+.blink {
+    animation: fade 3000ms infinite;
+    -webkit-animation: fade 3000ms infinite;
+}
+
+/*End of Device ready CSS*/
+
+/**/
+
+#debug-div {
+    width: 98%;
+    margin: 10px 1% 0px 1%;
+}
+
+
+/**/
+
+#debugging-message {
+    resize: none;
+}

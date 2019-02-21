@@ -89,7 +89,7 @@ function handleCameraScan() {
 }
 
 function onGSError(error) {
-    debugMessage.value += '\n]' + new Date().toLocaleString() + '] ERROR: ' + JSON.stringify(error);
+    debugMessage.value += '\n[' + new Date().toLocaleString() + '] ERROR: ' + JSON.stringify(error);
     debugMessage.scrollTop = debugMessage.scrollHeight;
 }
 

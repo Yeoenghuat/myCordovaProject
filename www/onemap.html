@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src *; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data:">
+    <title>title</title>
+</head>
+
+<body>
+    <div class="container-fluid plugin-div">
+        <div id="deviceready" class="blink">
+            <p class="event listening">Connecting to Device</p>
+            <p class="event received">Device is Ready</p>
+        </div>
+        <div class="mb-3">
+            <div class="col-12 px-1">
+                <h5>Location Name / Postal Code</h5>
+            </div>
+            <div class="row mb-2">
+                <div class="input-group col-sm">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="inputGroup-sizing-default">Start Name</span>
+                    </div>
+                    <input id="start-point-name" type="text" class="form-control" aria-label="Default"
+                        aria-describedby="inputGroup-sizing-default">
+                </div>
+                <div class="input-group col-sm">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="inputGroup-sizing-default">End Name</span>
+                    </div>
+                    <input id="end-point-name" type="text" class="form-control" aria-label="Default"
+                        aria-describedby="inputGroup-sizing-default">
+                </div>
+            </div>
+            <div class="row mb-2">
+                <div class="input-group col-sm">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="inputGroup-sizing-default">Start</span>
+                    </div>
+                    <select id="ddl-start-point" class="form-control">
+                    </select>
+                </div>
+                <div class="input-group col-sm">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="inputGroup-sizing-default">End</span>
+                    </div>
+                    <select id="ddl-end-point" class="form-control">
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="mb-3">
+            <div class="col-12 px-1">
+                <h5>Coordinate</h5>
+            </div>
+            <div class="row mb-2">
+                <div class="input-group col-sm">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="inputGroup-sizing-default">Start X Coord</span>
+                    </div>
+                    <input id="start-x" type="text" class="form-control" aria-label="Default"
+                        aria-describedby="inputGroup-sizing-default" readonly>
+                </div>
+                <div class="input-group col-sm">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="inputGroup-sizing-default">Start Y Coord</span>
+                    </div>
+                    <input id="start-y" type="text" class="form-control" aria-label="Default"
+                        aria-describedby="inputGroup-sizing-default" readonly>
+                </div>
+            </div>
+            <div class="row mb-2">
+
+                <div class="input-group col-sm">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="inputGroup-sizing-default">End X Coord</span>
+                    </div>
+                    <input id="end-x" type="text" class="form-control" aria-label="Default"
+                        aria-describedby="inputGroup-sizing-default" readonly>
+                </div>
+                <div class="input-group col-sm">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="inputGroup-sizing-default">End Y Coord</span>
+                    </div>
+                    <input id="end-y" type="text" class="form-control" aria-label="Default"
+                        aria-describedby="inputGroup-sizing-default" readonly>
+                </div>
+            </div>
+            <div class="mb-3">
+                <div class="col-12 px-1">
+                    <h5>Calculation</h5>
+                </div>
+                <div class="row mb-2">
+                    <div class="input-group col-sm">
+                        <button id="distance-btn" type="button" class="btn btn-primary">Calculate Distance</button>
+                    </div>
+                    <div class="input-group col-10">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="inputGroup-sizing-default">Route Via</span>
+                        </div>
+                        <select id="ddl-route-via" class="form-control">
+                        </select>
+                    </div>
+                </div>
+                <div class="row mb-2">
+                    <div class="input-group col-12">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="inputGroup-sizing-default">Total Distance</span>
+                        </div>
+                        <input id='total-distance-tb' type="text" class="form-control" aria-label="Default"
+                            aria-describedby="inputGroup-sizing-default">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="debug-div">
+        <div class="col-12 px-1">
+            <h5>Debugging Message</h5>
+        </div>
+        <div class="form-group">
+            <textarea id="debugging-message" class="form-control" readonly rows="20"></textarea>
+        </div>
+    </div>
+    <link rel="stylesheet" href="../www/css/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="css/onemap.css">
+    <script type="text/javascript" src="../www/js/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="../www/js/popperjs/popper.min.js"></script>
+    <script type="text/javascript" src="../www/js/bootstrap/bootstrap.min.js"></script>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/onemap.js"></script>
+</body>
+
+</html>
