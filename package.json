@@ -24,6 +24,7 @@
         "cordova-plugin-file-transfer": "^1.7.1",
         "cordova-plugin-geolocation": "^4.0.1",
         "cordova-plugin-inappbrowser": "^3.0.0",
+        "cordova-plugin-iroot": "0.8.0",
         "cordova-plugin-screen-orientation": "^3.0.1",
         "cordova-plugin-splashscreen": "^5.0.2",
         "cordova-plugin-vibration": "^3.1.0",
@@ -51,7 +52,11 @@
             "cordova-plugin-splashscreen": {},
             "cordova-plugin-vibration": {},
             "cordova-plugin-file-transfer": {},
-            "cordova-plugin-genius-scan": {}
+            "cordova-plugin-genius-scan": {},
+            "cordova-plugin-iroot": {
+                "ENABLE_BUSYBOX_CHECK": "true"
+            },
+            "cordova-plugin-privacyscreen": {}
         },
         "platforms": [
             "android",

@@ -9,6 +9,7 @@
     </author>
     <content src="plugin.html" />
     <access origin="*" />
+    <allow-navigation href="*" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
     <allow-intent href="tel:*" />
@@ -58,7 +59,11 @@
     <plugin name="cordova-plugin-splashscreen" spec="^5.0.2" />
     <plugin name="cordova-plugin-vibration" spec="^3.1.0" />
     <plugin name="cordova-plugin-file-transfer" spec="^1.7.1" />
-    <engine name="android" spec="~7.1.4" />
-    <engine name="browser" spec="~5.0.4" />
     <plugin name="cordova-plugin-genius-scan" spec="@thegrizzlylabs/cordova-plugin-genius-scan@~0.0.1" />
+    <plugin name="cordova-plugin-privacyscreen" spec="0.4.0" />
+    <plugin name="cordova-plugin-iroot" spec="0.8.0">
+        <variable name="ENABLE_BUSYBOX_CHECK" value="true" />
+    </plugin>
+    <engine name="android" spec="^7.1.4" />
+    <engine name="browser" spec="^5.0.4" />
 </widget>
