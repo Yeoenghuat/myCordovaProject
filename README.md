@@ -61,6 +61,10 @@ cordova run browser -- --live-reload --target=chrome (if browsersync plugin is i
 
 Splash screen and App Icon are configured in the config.xml file. Multiple icon / screen images are required for different phone sizes. You can use this [link](https://pgicons.abiro.com/) to help you generate icons / screens for different resolution.
 
+## Screen capture / Task switcher
+
+This [plugin](https://www.npmjs.com/package/cordova-plugin-privacyscreen) is used to block screen capture and task snapshots. No configuration is needed.
+
 ## Useful links
 
 1.	Supported Plugin APIs: [link](https://cordova.apache.org/docs/en/latest/guide/support/index.html)
