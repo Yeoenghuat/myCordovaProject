@@ -30,6 +30,10 @@ function receivedEvent(id) {
     document.getElementById('scan_camera_btn').addEventListener('click', this.geniusScanCameraFeature);
     document.getElementById('scan_pdf_btn').addEventListener('click', this.geniusScanPDFFeature);
     document.getElementById('file-input').addEventListener('change', this.handleFileSelect);
+
+    IRoot.isRooted(function(result){
+        alert('Device Rooted: ' + result);
+    }, onGSError);
 }
 
 /*Camera Feature*/
