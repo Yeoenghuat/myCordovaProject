@@ -30,10 +30,9 @@ function receivedEvent(id) {
     document.getElementById('scan_camera_btn').addEventListener('click', this.geniusScanCameraFeature);
     document.getElementById('scan_pdf_btn').addEventListener('click', this.geniusScanPDFFeature);
     document.getElementById('file-input').addEventListener('change', this.handleFileSelect);
-
-    IRoot.isRooted(function(result){
-        alert('Device Rooted: ' + result);
-    }, onGSError);
+    document.getElementById('root-plugin').addEventListener('click', this.isRootedFeature);
+    document.getElementById('onemap-plugin').addEventListener('click', function () { window.location = `${cordova.file.applicationDirectory }www/onemap.html`; });
+    document.getElementById('gs-image-plugin').addEventListener('click', function () { window.location = `${cordova.file.applicationDirectory }www/upload.html`; });
 }
 
 /*Camera Feature*/
@@ -204,11 +203,11 @@ function fileUpload(options, url) {
 
 /*File Download Feature*/
 function fileDownloadFeature() {
-    window.requestFileSystem(window.PERSISTENT, 5 * 1024 * 1024, function(fs) {
+    window.requestFileSystem(window.PERSISTENT, 5 * 1024 * 1024, function (fs) {
 
         console.log('file system open: ' + fs.name);
         var url = 'http://cordova.apache.org/static/img/cordova_bot.png'
-            // create the download directory is doesn't exist
+        // create the download directory is doesn't exist
         fs.root.getDirectory('downloads', { create: true });
 
         // we will save file in .. downloads/phonegap-logo.png
@@ -216,10 +215,10 @@ function fileDownloadFeature() {
         var fileTransfer = new window.FileTransfer();
         var uri = encodeURI(decodeURIComponent(url));
 
-        fileTransfer.download(uri, filePath, function(entry) {
-                alert('Download Success: ' + entry.fullPath);
-            },
-            function(error) {
+        fileTransfer.download(uri, filePath, function (entry) {
+            alert('Download Success: ' + entry.fullPath);
+        },
+            function (error) {
                 alert('An error has occurred: Code = : ' + error.code + '\n' +
                     'Download error source: ' + error.source + '\n' +
                     'Download error target: ' + error.target);
@@ -266,11 +265,11 @@ function onGSInitFs(fs) {
 
     var reader = new FileReader();
     // Execute this when file reader load event is fired
-    reader.onload = function(e) {
+    reader.onload = function (e) {
         selectedFileBlob = reader.result;
         // create an empty temp file, "scan.jpg"
-        fs.root.getFile("scan.jpg", { create: true }, function(DatFile) {
-            DatFile.createWriter(function(DatContent) {
+        fs.root.getFile("scan.jpg", { create: true }, function (DatFile) {
+            DatFile.createWriter(function (DatContent) {
                 // Write the content of the selected file into the temp file.
                 // The selected file is stored in memory, we need to write it into temp file to manipulate it.
                 DatContent.write(selectedFileBlob);
@@ -319,3 +318,11 @@ function setPicture(fileUri) {
     pdfButton.disabled = false;
 }
 /*End of Genius Scan Feature*/
+
+/*Rooted Device Feature*/
+function isRootedFeature() {
+    IRoot.isRooted(function (result) {
+        alert('Device Rooted: ' + result);
+    }, onGSError);
+}
+/*End of Rooted Device Feature*/
