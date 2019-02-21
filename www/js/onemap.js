@@ -19,6 +19,7 @@ function receivedEvent(id) {
     console.log('Received Event: ' + id);
 
     var form = new FormData();
+    // Enter the credentials for onemap here
     form.append("email", "");
     form.append("password", "");
 
