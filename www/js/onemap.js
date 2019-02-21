@@ -75,7 +75,6 @@ function retrieveLocationByName(location, point) {
 
     // Add all returned values into a dropdown list for user to select
     $.ajax(options).done(function (response) {
-        console.log(response);
         var counter = 0;
         var ddlElement = document.getElementById((point == 'start-point-name') ? 'ddl-start-point' : 'ddl-end-point');
         response.results.forEach(function (element) {
