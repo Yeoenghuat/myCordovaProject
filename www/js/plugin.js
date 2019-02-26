@@ -31,13 +31,18 @@ function receivedEvent(id) {
     document.getElementById('scan_pdf_btn').addEventListener('click', this.geniusScanPDFFeature);
     document.getElementById('file-input').addEventListener('change', this.handleFileSelect);
     document.getElementById('root-plugin').addEventListener('click', this.isRootedFeature);
-    document.getElementById('onemap-plugin').addEventListener('click', function () { window.location = `${cordova.file.applicationDirectory }www/onemap.html`; });
-    document.getElementById('gs-image-plugin').addEventListener('click', function () { window.location = `${cordova.file.applicationDirectory }www/upload.html`; });
+    if (device.platform == 'Android') {
+        document.getElementById('onemap-plugin').addEventListener('click', function () { window.location = `${cordova.file.applicationDirectory}www/onemap.html`; });
+        document.getElementById('gs-image-plugin').addEventListener('click', function () { window.location = `${cordova.file.applicationDirectory}www/upload.html`; });
+    } else {
+        document.getElementById('onemap-plugin').addEventListener('click', function () { window.location = `${cordova.file.applicationDirectory}onemap.html`; });
+        document.getElementById('gs-image-plugin').addEventListener('click', function () { window.location = `${cordova.file.applicationDirectory}upload.html`; });
+    }
 }
 
 /*Camera Feature*/
 function cameraFeature() {
-    navigator.camera.getPicture(this.onCameraSuccess, this.onCameraFail, {
+    navigator.camera.getPicture(onCameraSuccess, onCameraFail, {
         quality: 50,
         destinationType: Camera.DestinationType.DATA_URL,
         sourceType: Camera.PictureSourceType.CAMERA
